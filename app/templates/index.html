@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="title-banner d-flex justify-content-center text-center text-light mt-3">
+        <h2>My favorite Plants</h2>
+    </div>
+
+    {% for p in posts %}
+    <div class="card d-flex mt-3 mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{p.title}}</h5>
+            <p class="card-text">{{ p.body }}</p>
+            <div>
+                <cite>&mdash; {{ p.type }} </cite>
+            </div>
+            <div>
+            <a href="#" class="btn btn-default text-center" id="more-info-btn">More Info</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+{% endblock content %}
